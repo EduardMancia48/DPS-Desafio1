@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import './App.css';
 import './formPizza.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
-function App() {
-  const [pizzaSize, setPizzaSize] = useState('Personal'); // Tamaño de la pizza
-  const [extraIngredients, setExtraIngredients] = useState(0); // Cantidad de ingredientes adicionales
+function FormPizza() {
+  const [pizzaSize, setPizzaSize] = useState('Personal');
+  const [extraIngredients, setExtraIngredients] = useState(0);
   const basePrices = {
     Personal: 7.0,
     Mediana: 10.0,
@@ -31,6 +32,11 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand>Pizzería "La Italiana"</Navbar.Brand>
+        </Container>
+      </Navbar>
       <h1>Pizzería "La Italiana"</h1>
       <h2>Personaliza tu pizza</h2>
       <div>
@@ -56,4 +62,4 @@ function App() {
   );
 }
 
-export default App;
+export default FormPizza;
